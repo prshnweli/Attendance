@@ -2,6 +2,7 @@ SELECT
 STU.ID,
 STU.LN + ', ' + STU.FN AS 'Name',
 STU.GR AS 'Grade',
+Teacher = (SELECT TE FROM TCH WHERE STU.CU = TCH.TN AND STU.SC = TCH.SC AND TCH.DEL = 0),
 STU.U2 AS 'SPED',
 STU.U4 AS 'Migrant',
 STU.ETH AS 'Ethnicity',
